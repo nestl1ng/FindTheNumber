@@ -1,0 +1,184 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f5fa;
+}
+.GameScreenMain {
+  background: #fff;
+  overflow: hidden;
+  width: 722px;
+  height: 573px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-family: Montserrat, Open Sans, sans-serif;
+}
+.GameScreenHeader {
+  position: relative;
+  width: 100%;
+  background-color: #4db8ec;
+  background-image: url("../assets/HeaderFon.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  color: #fff !important;
+  min-height: 136px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.GameScreenHeader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    271deg,
+    rgba(168, 129, 253, 0.53),
+    #5900b1
+  ) !important;
+  background-color: transparent;
+}
+.GameScreenHeaderTitle {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 15px;
+  line-height: 26px;
+  font-size: 36px;
+  margin-bottom: 0;
+  font-family: Montserrat, Open Sans, sans-serif;
+  font-weight: 800;
+}
+.GameScreenHeaderDescript {
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 36px;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.GameScreenBody {
+  padding: 30px 45px 32px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+.GameScreenBodyContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+.GameScreenBodyWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.GameScreenBodyDirection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 295px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: left;
+}
+.GameScreenBodyTitle {
+  text-align: center;
+  width: 100%;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 26px;
+  color: #8f4af9;
+  margin: 0 0 30px;
+}
+.GameScreenList {
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+}
+.GameScreenListItem {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.GameScreenListItemTitle {
+  display: flex;
+  align-items: flex-start;
+}
+.GameScreenListItemTitleImg {
+  min-height: 26px;
+  min-width: 26px;
+  background-repeat: no-repeat;
+  margin-right: 14px;
+  background-position: 50%;
+}
+.GameScreenListItemTitleImg.eye1 {
+  background-image: url("../assets/eye1.svg");
+}
+.GameScreenListItemTitleImg.eye2 {
+  background-image: url("../assets/eye2.svg");
+}
+.GameScreenListItemTitleImg.eye3 {
+  background-image: url("../assets/eye3.svg");
+}
+.GameScreenListItemTitleText {
+  line-height: 20px;
+  font-weight: 800;
+  color: #333;
+  text-align: left;
+}
+.GameScreenListItemDesc {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 40px;
+  color: #333;
+  line-height: 20px;
+}
+.GameScreenDifficulty {
+  margin: 0 auto;
+  min-height: auto;
+  padding-left: 0;
+  padding-right: 0;
+  order: 0;
+  width: auto;
+}
+.GameScreenBtn {
+  display: inline-block;
+  width: 100%;
+  min-width: 177px;
+  align-self: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding: 16px 0;
+  font-family: Open Sans, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 45px;
+  text-align: center;
+  border: 1px solid #6039aa;
+  background-color: #6039aa;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+}
