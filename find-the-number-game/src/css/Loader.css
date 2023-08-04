@@ -1,0 +1,121 @@
+.GameScreenContainer {
+  padding: 45px;
+  height: 528px;
+  position: relative;
+  display: flex;
+  font-size: 16px;
+}
+.GameScreenContainerTutor {
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: Open Sans, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  background: #4db8ec;
+}
+.GameScreenContainerHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 450px;
+  margin: 60px auto 30px;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 1.5em 1.2em;
+  border-radius: 3px;
+  color: #fff;
+  box-shadow: 0 7px 35px 0 rgba(0, 0, 0, 0.3);
+}
+.GameScreenContainerHeaderTask {
+  margin: 0;
+  font-family: Open Sans, Arial, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica, sans-serif;
+  font-size: 1.15em;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.GameScreenContainerHeaderTaskReference {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.15em;
+  line-height: 1;
+  position: absolute;
+  top: 24px;
+  right: 20px;
+}
+.GameScreenContainerNumbers {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 485px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.GameScreenNumberLine {
+  display: flex;
+  width: 100%;
+  height: 103px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+.GameScreenNumberItem {
+  cursor: pointer;
+  width: 30%;
+  line-height: 80px;
+  font-size: 40px;
+  position: relative;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.Orange {
+  background: #f28e37;
+}
+.Pink {
+  background: #fc73b0;
+}
+.Purple {
+  background: #8e3dcb;
+}
+.Green {
+  background: #94c94d;
+}
+.Blue {
+  background: #4db8ec;
+}
+.Disable {
+  opacity: 0.5;
+}
+.GameScreenNumberItemArm {
+  width: 96px;
+  height: 103px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -20px);
+  -ms-transform: translate(-50%, -20px);
+  transform: translate(-50%, -20px);
+  z-index: 1;
+  background: url("../assets/arm.svg") no-repeat;
+}
+.GameScreenNumberText{
+    text-align: center;
+    align-self: center;
+    width: 200px;
+    padding-bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}

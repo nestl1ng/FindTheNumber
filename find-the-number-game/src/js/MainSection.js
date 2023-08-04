@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainSection = () => {
+const MainSection = ({step,setStep}) => {
   return (
     <div className="GameScreenMain">
       <div className="GameScreenHeader">
@@ -50,7 +50,7 @@ const MainSection = () => {
             </ul>
           </div>
           <div className="GameScreenDifficulty">
-            <a href="#lol" className="GameScreenBtn">Далее</a>
+            <button onClick={()=>setStep(1)} className="GameScreenBtn">Далее</button>
           </div>
         </div>
       </div>
