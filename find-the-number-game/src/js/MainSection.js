@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainSection = ({step,setStep}) => {
+const MainSection = ({setStep}) => {
   return (
     <div className="GameScreenMain">
       <div className="GameScreenHeader">

@@ -31,6 +31,12 @@
   border-radius: 3px;
   color: #fff;
   box-shadow: 0 7px 35px 0 rgba(0, 0, 0, 0.3);
+  animation: start 0.3s;
+}
+@keyframes start {       
+  0% {
+    opacity: 0;
+}
 }
 .GameScreenContainerHeaderTask {
   margin: 0;
