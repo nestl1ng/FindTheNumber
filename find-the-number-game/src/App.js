@@ -6,7 +6,7 @@ import MainGame from './js/MainGame';
 import { useState } from 'react';
 
 function App() {
-  let [step,setStep] = useState(0);
+  let [step,setStep] = useState(3);
   let comp = <MainSection setStep={setStep}/>;
   switch (step) {
     case 1:

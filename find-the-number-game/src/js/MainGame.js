@@ -1,43 +1,67 @@
-import React from "react";
 import "../css/MainGame.css";
-
+import Numbers from "./Numbers";
+import Numbers4lvl from "./Numbers4lvl";
+import { useState } from "react";
 const MainGame = () => {
+  let [levelCount,setLevelCount]=useState(1);
+  let [bonusCount,setBonusCount]=useState(1);
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  let searchNumb = getRandomInt(1, 11);
+  if(levelCount===2){
+    searchNumb = getRandomInt(1, 101);
+  } else if(levelCount===3){
+    searchNumb = getRandomInt(1, 1001);
+  }
+  let comp = <Numbers searchNumb={searchNumb} getRandomInt={getRandomInt} setLevelCount={setLevelCount} levelCount={levelCount} bonusCount={bonusCount} setBonusCount={setBonusCount}/>;
+  switch (levelCount) {
+    case 4:
+      comp = <Numbers4lvl levelCount={levelCount}/>;
+      break;
+    case 5:
+      comp = <Numbers4lvl/>;
+      break;
+    default:
+     comp = <Numbers searchNumb={searchNumb} getRandomInt={getRandomInt} setLevelCount={setLevelCount} levelCount={levelCount} bonusCount={bonusCount} setBonusCount={setBonusCount}/>;
+  }
   return (
     <div className="GameScreenMain">
       <div className="GameScreenContainer">
         <div className="MainGameContainer">
           <div className="MainMenu">
-            <div class="MainMenuItem Time">
-              <div class="MainMenuItemText"> ВРЕМЯ </div>
-              <div class="MainMenuItemIndex"> 00:00 </div>
+            <div className="MainMenuItem Time">
+              <div className="MainMenuItemText"> ВРЕМЯ </div>
+              <div className="MainMenuItemIndex"> 00:00 </div>
             </div>
-            <div class="MainMenuItem">
-              <div class="MainMenuItemText"> УРОВЕНЬ </div>
-              <div class="MainMenuItemIndex">1-9</div>
+            <div className="MainMenuItem">
+              <div className="MainMenuItemText"> УРОВЕНЬ </div>
+              <div className="MainMenuItemIndex">{levelCount}-9</div>
             </div>
-            <div class="MainMenuItem">
-              <div class="MainMenuItemText"> ОЧКИ </div>
-              <div class="MainMenuItemIndex">0</div>
+            <div className="MainMenuItem">
+              <div className="MainMenuItemText"> ОЧКИ </div>
+              <div className="MainMenuItemIndex">0</div>
             </div>
-            <div class="MainMenuItem Bonuses">
-              <div class="MainMenuItemText"> БОНУС </div>
+            <div className="MainMenuItem Bonuses">
+              <div className="MainMenuItemText"> БОНУС </div>
               <div className="MainMenuItemIndex">
-                <span class="GameMenuMultRounds">
-                  <span class="GameMenuMultRound Active"></span>
-                  <span class="GameMenuMultRound"></span>
-                  <span class="GameMenuMultRound"></span>
-                  <span class="GameMenuMultRound"></span>
-                  <span class="GameMenuMultRound"></span>
-                  <span class="GameMenuMultText">x1</span>
+                <span className="GameMenuMultRounds">
+                  <span className="GameMenuMultRound Active"></span>
+                  <span className={`GameMenuMultRound ${bonusCount>=2 ? "Active" : ""}`}></span>
+                  <span className={`GameMenuMultRound ${bonusCount>=3 ? "Active" : ""}`}></span>
+                  <span className={`GameMenuMultRound ${bonusCount>=4 ? "Active" : ""}`}></span>
+                  <span className={`GameMenuMultRound ${bonusCount>=5 ? "Active" : ""}`}></span>
+                  <span className="GameMenuMultText">x{bonusCount}</span>
                 </span>
               </div>
             </div>
           </div>
           <div className="MainGameInner">
             <div className="MainGameTask">
-            <p class="MainGameTaskText"> Найдите указанное число: </p>
-            <span class="MainGameTaskReference">5</span>
+              <p className="MainGameTaskText"> Найдите указанное число: </p>
+              <span className="MainGameTaskReference">{searchNumb}</span>
             </div>
+            {comp}
           </div>
         </div>
       </div>
