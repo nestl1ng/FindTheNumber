@@ -178,14 +178,14 @@
   animation: blink 0.4s ease-in infinite alternate;
   animation-delay: 0.4s;
 }
-.Scale{
+.Scale {
   animation: scale 0.4s ease-in infinite alternate;
   animation-delay: 0.4s;
 }
 @keyframes scale {
   100% {
     transform: scale(0.4);
-}
+  }
 }
 @keyframes blink {
   100% {
@@ -205,4 +205,28 @@
   100% {
     transform: rotate(0);
   }
+}
+.NumbersLine.Four {
+  height: 76px;
+}
+.NumbersLine.Six {
+  height: 60px;
+}
+.NumbersLine.Eight {
+  height: 48px;
+}
+.NumbersLine.Four button {
+  width: 22.5%;
+  line-height: 60px;
+  font-size: 30px;
+}
+.NumbersLine.Six button {
+  width: 22.5%;
+  line-height: 50px;
+  font-size: 24px;
+}
+.NumbersLine.Eight button {
+  width: 18%;
+  line-height: 40px;
+  font-size: 18px;
 }

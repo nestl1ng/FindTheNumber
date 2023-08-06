@@ -1,5 +1,3 @@
-import React from "react";
-
 const MainSection = ({setStep}) => {
   return (
     <div className="GameScreenMain">
