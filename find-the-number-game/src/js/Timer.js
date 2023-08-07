@@ -15,7 +15,9 @@ const Timer = ({ minutes, seconds, flag, step, setStep }) => {
 
   useEffect(() => {
     if ((s === 0)&&(m === 0)) {
-      setStep(step+1)
+      setTimeout(function () {
+        setStep(step+1)
+      }, 300);
     }
   }, [flag]);
   useEffect(() => {

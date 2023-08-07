@@ -33,10 +33,10 @@
   box-shadow: 0 7px 35px 0 rgba(0, 0, 0, 0.3);
   animation: start 0.3s;
 }
-@keyframes start {       
+@keyframes start {
   0% {
     opacity: 0;
-}
+  }
 }
 .GameScreenContainerHeaderTask {
   margin: 0;
@@ -116,12 +116,12 @@
   z-index: 1;
   background: url("../assets/arm.svg") no-repeat;
 }
-.GameScreenNumberText{
-    text-align: center;
-    align-self: center;
-    width: 200px;
-    padding-bottom: 30px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
+.GameScreenNumberText {
+  text-align: center;
+  align-self: center;
+  width: 200px;
+  padding-bottom: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
 }

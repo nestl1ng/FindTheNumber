@@ -2,14 +2,32 @@ import "../css/MainGame.css";
 import Numbers from "./Numbers";
 import { useState } from "react";
 import Timer from "./Timer";
-const MainGame = ({ step, setStep,correctCount, setCorrectCount,tapCount,setTapCount,points,setPoints }) => {
+import Answers from "./Answers";
+const MainGame = ({
+  step,
+  setStep,
+  correctCount,
+  setCorrectCount,
+  tapCount,
+  setTapCount,
+  points,
+  setPoints,
+}) => {
   let [levelCount, setLevelCount] = useState(1);
   let [bonusCount, setBonusCount] = useState(1);
- 
   let [flag, setFlag] = useState(false);
- 
-  let seconds = 5;
-  let minutes = 0;
+  let [wrongAnsw, setWrongAnsw] = useState(false);
+  let [trueAnsw, setTrueAnsw] = useState(false);
+
+  let seconds = 0;
+  let minutes = 1;
+
+  function arrayRandElement(arr) {
+    let rand = Math.floor(Math.random() * arr.length);
+    return arr[rand];
+  }
+  let arrColor = ["Orange", "Blue", "Green", "Pink", "Purple"];
+
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
@@ -24,7 +42,7 @@ const MainGame = ({ step, setStep,correctCount, setCorrectCount,tapCount,setTapC
   return (
     <div className="GameScreenMain">
       <div className="GameScreenContainer">
-        <div className="MainGameContainer">
+        <div className={`MainGameContainer ${levelCount > 1 ? arrayRandElement(arrColor) : ""}`}>
           <div className="MainMenu">
             <div className="MainMenuItem Time">
               <div className="MainMenuItemText"> ВРЕМЯ </div>
@@ -74,12 +92,19 @@ const MainGame = ({ step, setStep,correctCount, setCorrectCount,tapCount,setTapC
               </div>
             </div>
           </div>
-          <div className="MainGameInner">
+          <Answers wrongAnsw={wrongAnsw} trueAnsw={trueAnsw} />
+          <div
+            className={`MainGameInner ${
+              wrongAnsw || trueAnsw ? "disable" : ""
+            }`}
+          >
             <div className="MainGameTask">
               <p className="MainGameTaskText"> Найдите указанное число: </p>
               <span className="MainGameTaskReference">{searchNumb}</span>
             </div>
             <Numbers
+              arrColor={arrColor}
+              arrayRandElement={arrayRandElement}
               setFlag={setFlag}
               flag={flag}
               searchNumb={searchNumb}
@@ -94,6 +119,8 @@ const MainGame = ({ step, setStep,correctCount, setCorrectCount,tapCount,setTapC
               tapCount={tapCount}
               setPoints={setPoints}
               points={points}
+              setWrongAnsw={setWrongAnsw}
+              setTrueAnsw={setTrueAnsw}
             />
           </div>
         </div>
